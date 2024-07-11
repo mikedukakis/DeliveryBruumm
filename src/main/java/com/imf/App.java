@@ -96,7 +96,7 @@ public class App {
 
     public List<Product> productOrderMenu() {
         List<Product> products = new ArrayList<>();
-        Product product = null;
+        Product product;
         boolean exit = false;
         do {
             System.out.println("Please choose a product to add to your shopping cart:\n" +
