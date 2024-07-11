@@ -15,5 +15,12 @@ public abstract class Product {
         this.price = price;
     }
 
+    @Override
+    public String toString() {
+        return "Product:\n" +
+                "Product: " + Product.class.getName() + "\n" +
+                "price: " + price + "\n";
+    }
+
     public abstract void promotion();
 }

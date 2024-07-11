@@ -33,4 +33,11 @@ public class Customer {
     public static List<Customer> getCustomers() {
         return customers;
     }
+
+    @Override
+    public String toString() {
+        return "Customer:\n" +
+                "FullName: " + fullName + '\n' +
+                "Address: " + address + '\n';
+    }
 }

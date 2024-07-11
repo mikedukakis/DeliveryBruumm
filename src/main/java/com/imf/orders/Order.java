@@ -2,7 +2,9 @@ package com.imf.orders;
 
 import com.imf.customers.Customer;
 import com.imf.delivery.DeliveryPerson;
+import com.imf.products.Product;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Order {
@@ -11,15 +13,22 @@ public class Order {
     private boolean delivered;
     private Customer customer;
     private DeliveryPerson deliveryPerson;
+    private List<Product> products;
+    private float totalPrice;
     private static List<Order> pendingOrders;
     private static List<Order> deliveredOrders;
 
-    public Order(boolean delivered, Customer customer, DeliveryPerson deliveryPerson) {
+    public Order(boolean delivered, Customer customer, DeliveryPerson deliveryPerson, List<Product> products,
+                 float totalPrice) {
         this.orderId = ++nextId;
         nextId = this.orderId;
         this.delivered = delivered;
         this.customer = customer;
         this.deliveryPerson = deliveryPerson;
+        this.products = products;
+        this.totalPrice = totalPrice;
+        pendingOrders = new ArrayList<>();
+        deliveredOrders = new ArrayList<>();
     }
 
     public int getOrderId() {
@@ -60,5 +69,16 @@ public class Order {
 
     public static List<Order> getDeliveredOrders() {
         return deliveredOrders;
+    }
+
+    @Override
+    public String toString() {
+        return "Order: \n" +
+                "OrderId: " + orderId + "\n" +
+                "Delivered: " + delivered + "\n" +
+                "Customer: " + customer + "\n" +
+                "Delivery Person: " + this.deliveryPerson.getFullName() + "\n" +
+                "Products: " + this.products.toString() + "\n" +
+                "Total Price: " + this.totalPrice;
     }
 }

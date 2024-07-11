@@ -24,7 +24,7 @@ public class DeliveryPerson {
         this.fullName = fullName;
     }
 
-    public boolean isAvailability() {
+    public boolean getAvailability() {
         return availability;
     }
 
