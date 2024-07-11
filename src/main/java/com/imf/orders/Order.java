@@ -14,5 +14,51 @@ public class Order {
     private static List<Order> pendingOrders;
     private static List<Order> deliveredOrders;
 
+    public Order(boolean delivered, Customer customer, DeliveryPerson deliveryPerson) {
+        this.orderId = ++nextId;
+        nextId = this.orderId;
+        this.delivered = delivered;
+        this.customer = customer;
+        this.deliveryPerson = deliveryPerson;
+    }
 
+    public int getOrderId() {
+        return orderId;
+    }
+
+    public void setOrderId(int orderId) {
+        this.orderId = orderId;
+    }
+
+    public boolean isDelivered() {
+        return delivered;
+    }
+
+    public void setDelivered(boolean delivered) {
+        this.delivered = delivered;
+    }
+
+    public Customer getCustomer() {
+        return customer;
+    }
+
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
+    }
+
+    public DeliveryPerson getDeliveryPerson() {
+        return deliveryPerson;
+    }
+
+    public void setDeliveryPerson(DeliveryPerson deliveryPerson) {
+        this.deliveryPerson = deliveryPerson;
+    }
+
+    public static List<Order> getPendingOrders() {
+        return pendingOrders;
+    }
+
+    public static List<Order> getDeliveredOrders() {
+        return deliveredOrders;
+    }
 }

@@ -9,9 +9,9 @@ public class DeliveryPerson {
     private Transportation transportation;
     private static List<DeliveryPerson> deliveryPeople;
 
-    public DeliveryPerson(String fullName, boolean availability, Transportation transportation) {
+    public DeliveryPerson(String fullName, Transportation transportation) {
         this.fullName = fullName;
-        this.availability = availability;
+        this.availability = true;
         this.transportation = transportation;
         deliveryPeople = new ArrayList<>();
     }
@@ -38,5 +38,9 @@ public class DeliveryPerson {
 
     public void setTransportation(Transportation transportation) {
         this.transportation = transportation;
+    }
+
+    public static List<DeliveryPerson> getDeliveryPeople() {
+        return deliveryPeople;
     }
 }
